@@ -39,9 +39,7 @@ pipeline {
                     }
                 }
             }
-        }
 
-        deployStages.each { stageName ->
             stage("Destroy $stageName in EKS") {
                 when {
                     expression { params.ENVIRONMENT == 'destroy' }
