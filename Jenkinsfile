@@ -23,15 +23,15 @@ pipeline {
             }
         }
 
-        def deployStages = ['prometheus', 'voting-app', 'micro-service', 'ingress-rule', 'nginx-controller']
+        stage("Deploy Applications to EKS") {
+            when {
+                expression { params.ENVIRONMENT == 'create' }
+            }
+            steps {
+                script {
+                    def deployStages = ['prometheus', 'voting-app', 'micro-service', 'ingress-rule', 'nginx-controller']
 
-        deployStages.each { stageName ->
-            stage("Deploy $stageName to EKS") {
-                when {
-                    expression { params.ENVIRONMENT == 'create' }
-                }
-                steps {
-                    script {
+                    deployStages.each { stageName ->
                         dir("kubernetes/$stageName") {
                             sh 'terraform init'
                             sh 'terraform apply -auto-approve'
@@ -39,13 +39,17 @@ pipeline {
                     }
                 }
             }
+        }
 
-            stage("Destroy $stageName in EKS") {
-                when {
-                    expression { params.ENVIRONMENT == 'destroy' }
-                }
-                steps {
-                    script {
+        stage("Destroy Applications in EKS") {
+            when {
+                expression { params.ENVIRONMENT == 'destroy' }
+            }
+            steps {
+                script {
+                    def deployStages = ['prometheus', 'voting-app', 'micro-service', 'ingress-rule', 'nginx-controller']
+
+                    deployStages.each { stageName ->
                         dir("kubernetes/$stageName") {
                             sh 'terraform destroy -auto-approve'
                         }
