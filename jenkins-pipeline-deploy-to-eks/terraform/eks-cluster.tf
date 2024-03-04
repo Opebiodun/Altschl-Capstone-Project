@@ -1,7 +1,7 @@
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
 
-  cluster_name                  = "myapp-eks-cluster"
+  cluster_name                  = "hr-dev-eks-demo"
   cluster_version               = "1.29"
   cluster_endpoint_public_access = true
 
