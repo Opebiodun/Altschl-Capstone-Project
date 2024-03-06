@@ -15,43 +15,19 @@ pipeline {
             steps {
                 script {
                     dir('terraform') {
-                        sh 'terraform init'
-                        sh 'terraform apply -auto-approve'
+                        sh "terraform init"
+                        sh "terraform apply -auto-approve"
                     }
                 }
             }
         }
-
-        stage("Deploy Applications to EKS") {
-            when {
-                expression { params.ENVIRONMENT == 'create' }
-            }
+        stage("Deploy to EKS") {
             steps {
                 script {
-                    def deployStages = ['prometheus', 'voting-app', 'micro-service', 'ingress-rule', 'nginx-controller']
-
-                    deployStages.each { stageName ->
-                        dir("kubernetes/$stageName") {
-                            sh 'terraform init'
-                            sh 'terraform apply -auto-approve'
-                        }
-                    }
-                }
-            }
-        }
-
-        stage("Destroy Applications in EKS") {
-            when {
-                expression { params.ENVIRONMENT == 'destroy' }
-            }
-            steps {
-                script {
-                    def deployStages = ['prometheus', 'voting-app', 'micro-service', 'ingress-rule', 'nginx-controller']
-
-                    deployStages.each { stageName ->
-                        dir("kubernetes/$stageName") {
-                            sh 'terraform destroy -auto-approve'
-                        }
+                    dir('kubernetes') {
+                        sh "aws eks update-kubeconfig --name hr-dev-eks-demo"
+                        sh "kubectl apply -f nginx-deployment.yaml"
+                        sh "kubectl apply -f nginx-service.yaml"
                     }
                 }
             }
