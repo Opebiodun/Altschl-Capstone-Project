@@ -6,28 +6,33 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
         AWS_DEFAULT_REGION = "eu-west-2"
     }
-     parameters {
-        choice(name: 'ENVIRONMENT', choices: ['create', 'destroy'], description: 'Create and destroy cluster with one click')
+    parameters{
+        choice(name: 'ENVIRONMENT', choices: ['create', 'destroy'], description: 'create and destroy cluster with one click')
     }
 
     stages {
         stage("Create an EKS Cluster") {
+            when {
+                expression { params.ENVIRONMENT == 'create' }
+            }
             steps {
                 script {
-                    dir('terraform') {
+                    dir('eks') {
                         sh "terraform init"
                         sh "terraform apply -auto-approve"
                     }
                 }
             }
         }
-        stage("Deploy to EKS") {
+
+        stage("destroy an EKS Cluster") {
+            when {
+                expression { params.ENVIRONMENT == 'destroy' }
+            }
             steps {
                 script {
-                    dir('kubernetes') {
-                        sh "aws eks update-kubeconfig --name eks_cluster"
-                        sh "kubectl apply -f nginx-deployment.yaml"
-                        sh "kubectl apply -f nginx-service.yaml"
+                    dir('eks') {
+                        sh "terraform destroy -auto-approve"
                     }
                 }
             }
