@@ -1,4 +1,5 @@
 # Create IAM Role
+/*
 resource "aws_iam_role" "eks_master_role" {
   name = "${local.name}-eks-master-role"
 
@@ -28,6 +29,7 @@ resource "aws_iam_role_policy_attachment" "eks_AmazonEKSVPCResourceController" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController"
   role       = aws_iam_role.eks_master_role.name
 }
+*/
 
 /*
 # Optionally, enable Security Groups for Pods
