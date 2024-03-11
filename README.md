@@ -45,9 +45,9 @@ This project is about deploying a microservices-based application using automate
 
 This Repository contains 3 Major Directories to successfully deploy Socks Shop Microservices-based Application.
 
-1. **eks-cluster:** This directory contains the Terraform code to create the Kubernetes cluster where the application will be deployed using a Jenkins pipeline.
-2. **Kubernetes:** This directory contains the sub-directories, files, and codes to deploy the application on Kubernetes using a Jenkins pipeline.
-3. **Terraformcode-to-create-jenkins-server:** This directory contains the codes to create the Jenkins server.
+1. **Terraformcode-to-create-jenkins-server:** This directory contains the codes to create the Jenkins server.
+2. **eks-cluster:** This directory contains the Terraform code to create the Kubernetes cluster where the application will be deployed using a Jenkins pipeline.
+3. **Kubernetes:** This directory contains the sub-directories, files, and codes to deploy the application on Kubernetes using a Jenkins pipeline.
 
 We are going to be deploying 10 services — carts, catalogue, frontend, orders, payment, queue-master, rabbitmq, session-db, shipping, and user. These 10 services are what make up the Sock-shop microservice.
 
