@@ -41,7 +41,7 @@ This project is about deploying a microservices-based application using automate
 
 # Solution
 
-**Deployment of Socks Shop Microservices-based Applications to Kubernetes using a Jenkins CI/CD Pipeline**
+# **Deployment of Socks Shop Microservices-based Applications to Kubernetes using a Jenkins CI/CD Pipeline**
 
 This Repository contains 3 Major Directories to successfully deploy Socks Shop Microservices-based Application.
 
@@ -84,7 +84,7 @@ The codes for the installation of the cluster have been provided in the **EKS-CL
    ```bash
    $ kubectl get svc -n sock-shop
    $ kubectl get svc -n prometheus (Grafana)
-   
+
 OR use Route 53 on AWS with an active DNS as stated in the Kubernetes directory.
 
 7. Destroy infrastructure.
