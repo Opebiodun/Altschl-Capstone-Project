@@ -70,7 +70,7 @@ The codes for the installation of the cluster have been provided in the **EKS-CL
 
 3. Once completed, access the Jenkins server on your browser and Set it up (follow the prompt/instruction display on the browser screen to setup the Jenkins server)
 4. Run the eks-cluster directory on jenkins through "Jenkinsfile-cluster"to create Kubernetes Cluster
-5. Run the kubernetes directory on jenkins through "Jenkinsfile" file to create deployments and Services
+5. Run the kubernetes directory on jenkins through "Jenkinsfile" file to create deployment on Kubernetes
 6. Test that the Socks Shop Microservices-based Applications and grafana is running 
 
     To run the Terraform files use the command below:
