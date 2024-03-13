@@ -46,6 +46,14 @@ We are going to be deploying 10 services — carts, catalogue, frontend, orders,
                 +---------> AWS Account  +-------+
                           |              |
                           +--------------+
+                          
+This diagram illustrates the flow of the project, starting from the GitHub repository where the project code resides. When changes are pushed to the repository, the Jenkins CI/CD pipeline is triggered. The pipeline consists of multiple stages:
+
+eks-cluster: This stage involves creating the Kubernetes cluster on AWS using Terraform. It sets up the necessary infrastructure for the microservices-based application deployment.
+
+Kubernetes: In this stage, the Kubernetes manifests are applied to the cluster to deploy the microservices-based application. This includes deploying individual services like carts, catalogue, frontend, etc.
+
+The Jenkins pipeline orchestrates the entire deployment process, ensuring automation, consistency, and reliability.                          
 
 The codes for the installation of the cluster have been provided in the **EKS-CLUSTER** directory mentioned above, while the installation of other prerequisites can be found on the internet using Google.com as a research tool.
 
