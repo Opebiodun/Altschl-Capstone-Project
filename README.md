@@ -17,7 +17,7 @@ We are going to be deploying 10 services — carts, catalogue, frontend, orders,
 - Kubectl installed
 - AWS CLI installed
 - Good Internet
-- GitHub Repo where the codes will be stored and attached to the Jenkins sever in order to run the codes from the repo for the creation of EKS cluster and deployment of the application.
+- Github Repository where the codes will be stored and attached to the Jenkins sever pipeline configuration in order to run the codes from the repository for the creation of EKS cluster and deployment on Kubernetes.
 - Grafana to collect, correlate, visualize, monitor, and analyze data
 
 ## **Architecture diagram**
@@ -60,7 +60,7 @@ The codes for the installation of the cluster have been provided in the **EKS-CL
    $ terraform init
    $ terraform --auto-approve
 
-3. Once completed, access the Jenkins server on your browser and Set it up
+3. Once completed, access the Jenkins server on your browser and Set it up (follow the prompt/istruction display on the browser screen to setup the Jenkins server)
 4. Run the eks-cluster directory on jenkins to create Kubernetes Cluster
 5. Run the kubernetes directory on jenkins to create deployments and Services
 6. Test that the Socks Shop Microservices-based Applications and grafana is running 
