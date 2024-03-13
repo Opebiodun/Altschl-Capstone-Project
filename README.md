@@ -78,7 +78,7 @@ The codes for the installation of the cluster have been provided in the **EKS-CL
    $ kubectl get svc -n sock-shop
    $ kubectl get svc -n prometheus (Grafana)
 
-OR use Route 53 on AWS with an active DNS as stated in the Kubernetes directory.
+OR use Route 53 on AWS with an active DNS as stated/used in the Kubernetes directory.
 
 7. Destroy infrastructure.
 
