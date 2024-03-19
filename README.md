@@ -17,7 +17,7 @@ We are going to be deploying 10 services — carts, catalogue, frontend, orders,
 - Kubectl installed
 - AWS CLI installed
 - Good Internet
-- Github Repository where the codes will be stored and attached to the Jenkins server pipeline configuration in order to run the codes from the repository for the creation of EKS cluster and deployment on Kubernetes.
+- GitHub Repository where the codes will be stored and attached to the Jenkins server pipeline configuration in order to run the codes from the repository for the creation of EKS cluster and deployment on Kubernetes.
 
 ## **Architecture diagram**
 
