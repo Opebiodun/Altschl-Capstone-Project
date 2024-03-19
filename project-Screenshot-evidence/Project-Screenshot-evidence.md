@@ -10,6 +10,7 @@
 ## jenkins creation of cluster and deployment of services screenshots
 ![alt text](<Screenshot (122).png>) ![alt text](<Screenshot (129).png>) ![alt text](<Screenshot (130).png>)
 ![alt text](<Screenshot (135).png>) ![alt text](<Screenshot (136).png>) ![alt text](<Screenshot (138).png>)
+![alt text](<Screenshot (177).png>)
 
 ## AWS Screenshots- Route 53, Amazon certificate issued
 ![alt text](<Screenshot (142).png>) ![alt text](<Screenshot (141).png>) ![alt text](<Screenshot (140).png>)
