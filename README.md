@@ -60,7 +60,7 @@ The codes for the installation of the cluster have been provided in the **EKS-CL
 ## Steps for the Project
 
 1. Create a Keypair on AWS account that matches your code keypair.
-2. Create a Jenkins Server with all the dependencies, libraries, and packages needed (check or use -Terraformcode-to-create-jenkins-server- directory for the codes or create your own code).
+2. Create a Jenkins Server with all the dependencies, libraries, and packages needed i.e installation of Jenkins, Git, Terraform and kubectl  (check or use -Terraformcode-to-create-jenkins-server- directory for the codes or create your own code).
 
    To run the Terraform files use the command below:
    ```bash
